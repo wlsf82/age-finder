@@ -6,9 +6,15 @@ This is simple React app to demonstrate how to test date fields using Cypress.
 
 Run `npm install` to install the project and dev dependencies.
 
+## Starting the app
+
+Run `npm start` to start the app in dev mode.
+
 ## Tests
 
-Run `npm test` to run the tests in headless mode.
+Run `npm test:ci` to run the tests in headless mode.
+
+> **Note:** when you run the above command, the server is automatically started, the tests are executed, and the server is shut down.
 
 Or run `npm run cy:open` to open Cypress in interactive mode.
 
