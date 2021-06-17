@@ -16,7 +16,9 @@ Run `npm test:ci` to run the tests in headless mode.
 
 > **Note:** when you run the above command, the server is automatically started, the tests are executed, and the server is shut down.
 
-Or run `npm run cy:open` to open Cypress in interactive mode.
+Run `npm run cypress` to open Cypress in interactive mode.
+
+> **Note:** when you run the above command, the server is automatically started before opening Cypress.
 
 ___
 
