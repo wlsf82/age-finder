@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
-import './App.css'
 import DatePicker from './components/DatePicker'
 import today from './today'
+import './App.css'
 
 function App() {
   const [ message, setMessage ] = React.useState()
@@ -26,14 +26,14 @@ function App() {
       <h1>Age finder</h1>
       <form>
         <DatePicker
-          max={today()}
-          onChange={handleInputChange}
+          max={ today() }
+          onChange={ handleInputChange }
           testSelector="birthdate"
         >
           When did you born?
         </DatePicker>
       </form>
-      { message && <p>{ message }</p>}
+      { message && <p>{ message }</p> }
     </div>
   )
 }
