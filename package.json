@@ -13,6 +13,7 @@
     "build": "react-scripts build",
     "test": "cypress run --reporter nyan",
     "test:ci": "start-server-and-test http://localhost:3000",
+    "test:prod": "cypress run --config baseUrl=https://age-finder.vercel.app --reporter nyan",
     "cy:open": "cypress open",
     "cypress": "start-server-and-test http://localhost:3000 cy:open"
   },
