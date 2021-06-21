@@ -11,7 +11,7 @@ function App() {
     const typedDateAsNumber = new Date(typedDate)
 
     if (isNaN(typedDateAsNumber)) {
-      setMessage('Invalid date.')
+      setMessage()
       return
     }
 
