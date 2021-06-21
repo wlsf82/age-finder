@@ -28,7 +28,7 @@ jobs:
           vercel-args: '--prod'
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-  tests-prod:
+  prod-tests:
     needs: deploy
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
