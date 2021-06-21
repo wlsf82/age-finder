@@ -35,9 +35,9 @@ describe('Age finder', () => {
     })
   })
 
-  context('Date more than one year ahead', () => {
+  context('Date in the future', () => {
     it('does not show paragraph', () => {
-      cy.setDate('2022-06-17')
+      cy.setDate('2021-06-17')
   
       cy.contains('p', "You're ").should('not.exist')
     })
