@@ -30,7 +30,7 @@ function App() {
           onChange={ handleInputChange }
           testSelector="birthdate"
         >
-          When did you born?
+          What's your birth date?
         </DatePicker>
       </form>
       { message && <p>{ message }</p> }
