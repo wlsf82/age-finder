@@ -1,3 +1,12 @@
 .App {
   text-align: center;
+  background-color: #abd1c6;
+}
+
+h1 {
+  color: #001e1d;
+}
+
+label, p {
+  color: #0f3433;
 }
