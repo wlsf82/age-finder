@@ -7,9 +7,17 @@ function App() {
   const [ message, setMessage ] = React.useState()
 
   const handleInputChange = event => {
-    const isAfterToday = moment(event.target.value, 'YYYY-MM-DD').isAfter(moment())
+    const typedDate = event.target.value
+    const typedDateAsNumber = new Date(typedDate)
+
+    if (isNaN(typedDateAsNumber)) {
+      setMessage('Invalid date.')
+      return
+    }
+
+    const isAfterToday = moment(typedDate, 'YYYY-MM-DD').isAfter(moment())
     const age = moment().diff(
-      moment(event.target.value, 'YYYY-MM-DD'), 'years'
+      moment(typedDate, 'YYYY-MM-DD'), 'years'
     )
 
     if (isAfterToday) {
