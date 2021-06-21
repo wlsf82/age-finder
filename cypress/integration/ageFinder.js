@@ -23,15 +23,17 @@ describe('Age finder', () => {
         cy.setDate(input.birthdate)
     
         cy.contains('p', `You're ${input.age} years old`)
+          .should('be.visible')
       })
     })
   })
 
   context('Singular', () => {
     it('singularizes when age is 1', () => {
-      cy.setDate('2020-06-15')
+      cy.setDate('2020-06-16')
   
       cy.contains('p', "You're 1 year old")
+        .should('be.visible')
     })
   })
 
@@ -39,7 +41,8 @@ describe('Age finder', () => {
     it('asks if you are from the future', () => {
       cy.setDate('2021-06-17')
   
-      cy.contains('p', 'Are you from the future?').should('be.visible')
+      cy.contains('p', 'Are you from the future?')
+        .should('be.visible')
     })
   })
 })
