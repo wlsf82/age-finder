@@ -13,7 +13,7 @@ function App() {
     )
 
     if (isAfterToday) {
-      setMessage()
+      setMessage('Are you from the future?')
     } else {
       age === 1 ?
         setMessage(`You're ${age} year old.`) :

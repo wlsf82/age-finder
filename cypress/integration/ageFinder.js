@@ -36,10 +36,10 @@ describe('Age finder', () => {
   })
 
   context('Date in the future', () => {
-    it('does not show paragraph', () => {
+    it('asks if you are from the future', () => {
       cy.setDate('2021-06-17')
   
-      cy.contains('p', "You're ").should('not.exist')
+      cy.contains('p', 'Are you from the future?').should('be.visible')
     })
   })
 })
