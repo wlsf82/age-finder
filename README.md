@@ -1,5 +1,7 @@
 # Age finder
 
+![Test status](https://github.com/wlsf82/age-finder/actions/workflows/main.yml/badge.svg)
+
 This is simple React app to demonstrate how to test date fields using Cypress.
 
 ## Installation
