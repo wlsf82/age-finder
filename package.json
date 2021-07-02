@@ -9,13 +9,17 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "cypress run --reporter nyan",
-    "test:ci": "start-server-and-test http://localhost:3000",
-    "test:prod": "cypress run --config baseUrl=https://age-finder.vercel.app --reporter nyan",
+    "test": "cypress run",
+    "test:ci": "start-server-and-test http://localhost:3000 && nyc report --reporter=text-summary",
+    "test:prod": "cypress run --config baseUrl=https://age-finder.vercel.app",
     "cy:open": "cypress open",
     "cypress": "start-server-and-test http://localhost:3000 cy:open"
+  },
+  "nyc": {
+    "exclude": ["src/reportWebVitals.js"],
+    "excludeAfterRemap": true
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.7",
+    "@cypress/instrument-cra": "^1.4.0",
     "cypress": "^7.6.0",
     "eslint-plugin-cypress": "^2.11.3",
     "start-server-and-test": "^1.12.5"
