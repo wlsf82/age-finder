@@ -9,6 +9,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "lint": "npx standard",
+    "lint:fix": "npx standard --fix",
     "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "cypress run",
@@ -18,6 +20,16 @@
     "cypress": "start-server-and-test http://localhost:3000 cy:open",
     "test:component:ci": "cypress run-ct",
     "test:component:open": "cypress open-ct"
+  },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "context",
+      "cy",
+      "Cypress",
+      "describe",
+      "it"
+    ]
   },
   "nyc": {
     "exclude": [
@@ -51,6 +63,7 @@
     "@cypress/webpack-dev-server": "^1.4.0",
     "cypress": "^7.6.0",
     "eslint-plugin-cypress": "^2.11.3",
+    "standard": "^16.0.3",
     "start-server-and-test": "^1.12.5",
     "webpack-dev-server": "^3.11.1"
   }

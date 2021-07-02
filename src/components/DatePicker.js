@@ -10,14 +10,14 @@ const DatePicker = ({
 
   return (
     <>
-      <label htmlFor="date-picker">{ children }</label>
+      <label htmlFor='date-picker'>{children}</label>
       <input
-        data-cy={ testSelector !== 'date-field' ? `${testSelector}-date-field` : testSelector }
-        max={ max }
-        name="date-picker"
-        onChange={ onChange }
-        style={ datePickerStyle }
-        type="date"
+        data-cy={testSelector !== 'date-field' ? `${testSelector}-date-field` : testSelector}
+        max={max}
+        name='date-picker'
+        onChange={onChange}
+        style={datePickerStyle}
+        type='date'
       />
     </>
   )

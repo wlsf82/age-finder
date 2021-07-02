@@ -21,7 +21,7 @@ describe('Age finder', () => {
     inputs.forEach(input => {
       it(`pluralizes the found age - ${input.age}`, () => {
         cy.setDate(input.birthdate)
-    
+
         cy.contains('p', `You're ${input.age} years old`)
           .should('be.visible')
       })
@@ -31,7 +31,7 @@ describe('Age finder', () => {
   context('Singular', () => {
     it('singularizes when age is 1', () => {
       cy.setDate('2020-06-16')
-  
+
       cy.contains('p', "You're 1 year old")
         .should('be.visible')
     })
@@ -40,7 +40,7 @@ describe('Age finder', () => {
   context('Date in the future', () => {
     it('asks if you are from the future', () => {
       cy.setDate('2021-06-17')
-  
+
       cy.contains('p', 'Are you from the future?')
         .should('be.visible')
     })
