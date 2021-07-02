@@ -10,7 +10,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Run component tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:component:ci
+
       - name: Run e2e tests 🧪
         uses: cypress-io/github-action@v2
         with:
+          install: false
           command: npm run test:ci
