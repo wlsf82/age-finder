@@ -3,8 +3,8 @@ import moment from 'moment'
 import DatePicker from './components/DatePicker'
 import './App.css'
 
-function App() {
-  const [ message, setMessage ] = React.useState()
+function App () {
+  const [message, setMessage] = React.useState()
 
   const handleInputChange = event => {
     const typedDate = event.target.value
@@ -23,25 +23,25 @@ function App() {
     if (isAfterToday) {
       setMessage('Are you from the future?')
     } else {
-      age === 1 ?
-        setMessage(`You're ${age} year old.`) :
-        setMessage(`You're ${age} years old.`)
+      age === 1
+        ? setMessage(`You're ${age} year old.`)
+        : setMessage(`You're ${age} years old.`)
     }
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <h1>Age finder</h1>
       <form>
         <DatePicker
-          max={ moment().format('YYYY-MM-DD') }
-          onChange={ handleInputChange }
-          testSelector="birthdate"
+          max={moment().format('YYYY-MM-DD')}
+          onChange={handleInputChange}
+          testSelector='birthdate'
         >
           What's your birth date?
         </DatePicker>
       </form>
-      { message && <p>{ message }</p> }
+      {message && <p>{message}</p>}
     </div>
   )
 }
