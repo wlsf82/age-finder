@@ -45,4 +45,18 @@ describe('Age finder', () => {
         .should('be.visible')
     })
   })
+
+  context('Empty date', () => {
+    it('does not show paragraph when clearing the date', () => {
+      cy.setDate('2021-06-17')
+      cy.contains('p', 'Are you from the future?')
+        .should('be.visible')
+
+      cy.get('[data-cy=birthdate-date-field]')
+        .clear()
+        .blur()
+
+      cy.get('p').should('not.exist')
+    })
+  })
 })
