@@ -15,10 +15,14 @@
     "test:ci": "start-server-and-test http://localhost:3000 && nyc report --reporter=text-summary",
     "test:prod": "cypress run --config baseUrl=https://age-finder.vercel.app",
     "cy:open": "cypress open",
-    "cypress": "start-server-and-test http://localhost:3000 cy:open"
+    "cypress": "start-server-and-test http://localhost:3000 cy:open",
+    "test:component:ci": "cypress run-ct",
+    "test:component:open": "cypress open-ct"
   },
   "nyc": {
-    "exclude": ["src/reportWebVitals.js"],
+    "exclude": [
+      "src/reportWebVitals.js"
+    ],
     "excludeAfterRemap": true
   },
   "eslintConfig": {
@@ -43,8 +47,11 @@
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.7",
     "@cypress/instrument-cra": "^1.4.0",
+    "@cypress/react": "^5.9.1",
+    "@cypress/webpack-dev-server": "^1.4.0",
     "cypress": "^7.6.0",
     "eslint-plugin-cypress": "^2.11.3",
-    "start-server-and-test": "^1.12.5"
+    "start-server-and-test": "^1.12.5",
+    "webpack-dev-server": "^3.11.1"
   }
 }
