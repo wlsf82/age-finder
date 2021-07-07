@@ -12,7 +12,7 @@ module.exports = (on, config) => {
     injectDevServer(on, config)
 
     const webpackConfig = findReactScriptsWebpackConfig(config, {
-      webpackConfigPath: 'react-scripts/config/webpack.config',
+      webpackConfigPath: 'react-scripts/config/webpack.config'
     })
     const rules = webpackConfig.module.rules.find((rule) => !!rule.oneOf).oneOf
     const babelRule = rules.find((rule) => /babel-loader/.test(rule.loader))
@@ -20,7 +20,7 @@ module.exports = (on, config) => {
     babelRule.options.plugins.push(require.resolve('babel-plugin-istanbul'))
 
     on('dev-server:start', (options) => {
-      return startDevServer({ options, webpackConfig });
+      return startDevServer({ options, webpackConfig })
     })
   }
 
