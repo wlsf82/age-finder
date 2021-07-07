@@ -61,7 +61,7 @@
     "@cypress/instrument-cra": "^1.4.0",
     "@cypress/react": "^5.9.1",
     "@cypress/webpack-dev-server": "^1.4.0",
-    "cypress": "^7.6.0",
+    "cypress": "^7.7.0",
     "eslint-plugin-cypress": "^2.11.3",
     "standard": "^16.0.3",
     "start-server-and-test": "^1.12.5",
